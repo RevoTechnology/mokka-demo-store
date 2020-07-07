@@ -1,0 +1,12 @@
+<input type="checkbox" id="main-popup-control" class="visually-hidden"/>
+<div class="main-popup" id="main-popup">
+  <div class="wrapper" id="main-popup-wrapper">
+    <label for="main-popup-control" class="close"></label>
+    <div class="popup-header">
+      <span class="logo"><%= image_tag("logos/#{locale}/mokka-orange.svg", alt: t(:logo_alt)) %></span>
+      <span class="logo"><%= image_tag('logos/demo-logo.svg', alt: 'Demostore') %></span>
+      <div class="faq-container"></div>
+    </div>
+    <div class="content"></div>
+  </div>
+</div>

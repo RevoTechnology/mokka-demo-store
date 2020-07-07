@@ -1,0 +1,17 @@
+.highlighted-item {
+  animation: .5s highlighted-item infinite alternate;
+}
+
+@keyframes highlighted-item {
+  from {
+    box-shadow: 0 0 1rem .5rem var(--main-color-a);
+  }
+
+  50% {
+    box-shadow: 0 0 1rem .5rem var(--bg-shop-item);
+  }
+
+  to {
+    box-shadow: 0 0 1rem .5rem var(--main-color-b);
+  }
+}

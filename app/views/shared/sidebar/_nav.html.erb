@@ -1,0 +1,45 @@
+<%
+  messages = Biovision::Components::Shop::Messages.sidebar
+  item = content_for :nav_item
+  items = {
+      root_path => messages[:root],
+      about_path => messages[:about],
+      item_path => messages[:item],
+      cart_path => messages[:cart],
+      done_path => messages[:done]
+  }
+%>
+
+<ul>
+  <% items.each do |path, data| %>
+    <li>
+      <% if data[0].to_s == item %>
+        <span><%= data[1][locale] %></span>
+        <div class="guides js-biovision-carousel">
+          <button class="prev carousel-button" type="button"></button>
+          <div class="carousel-container">
+            <% if data[3][locale] %>
+              <div class="carousel-item">
+                <p class="intro"><%= raw data[3][locale] %></p>
+              </div>
+            <% end %>
+            <% data[2].each do |details| %>
+              <% add = details[2] ? %(data-url=#{details[2]}) : '' %>
+              <div class="carousel-item">
+                <details>
+                  <summary data-highlight="<%= details[1] %>" <%= add %>>
+                    <%= details[0][locale][0] %>
+                  </summary>
+                  <p><%= raw details[0][locale][1] %></p>
+                </details>
+              </div>
+            <% end %>
+          </div>
+          <button class="next carousel-button" type="button"></button>
+        </div>
+      <% else %>
+        <%= link_to(data[1][locale], path) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

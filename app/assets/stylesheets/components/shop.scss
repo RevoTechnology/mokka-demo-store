@@ -1,0 +1,63 @@
+@import "components/shop/preview";
+@import "components/shop/item";
+@import "components/shop/cart";
+
+.buy-button {
+  background: var(--text-color-primary);
+  border: none;
+  color: var(--text-color-inverted-primary);
+  display: block;
+  font-size: var(--font-size-increased);
+  margin: 0;
+  padding: var(--spacer-xs) var(--spacer-l);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .25s;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: var(--text-color-secondary);
+    text-decoration: none;
+  }
+}
+
+.quantity-selector {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-family-shop);
+
+  input {
+    border: .1rem solid;
+    border-radius: .5rem;
+    color: var(--text-color-input);
+    display: block;
+    font-family: inherit;
+    font-size: var(--font-size-increased);
+    height: 4rem;
+    margin: 0 1.5rem;
+    text-align: center;
+    padding: 0;
+    width: 4rem;
+  }
+
+  button {
+    align-items: flex-start;
+    background: var(--bg-shop-detail);
+    border: none;
+    border-radius: 50%;
+    color: var(--detail-color);
+    cursor: pointer;
+    display: flex;
+    font-family: inherit;
+    font-size: 2.6rem;
+    line-height: 1;
+    height: 2.6rem;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    width: 2.6rem;
+  }
+}

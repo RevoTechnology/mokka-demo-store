@@ -1,0 +1,19 @@
+<% content_for :meta_title, t('.title') %>
+<% content_for :nav_item, :done %>
+<% content_for :sidebar_content, render('shared/sidebar/done') %>
+
+<article class="cart-done">
+  <div class="content-wrapper">
+    <h1><%= t('.heading') %></h1>
+    <p><%= raw t('.text') %></p>
+
+    <p class="mokka" id="done-text"><%= t('.paid_with_advance') %></p>
+
+    <nav>
+      <%= link_to(t('.to_main_page'), root_path(a: params[:a]), class: 'buy-button') %>
+    </nav>
+  </div>
+</article>
+<% unless params[:p].blank? %>
+  <span data-popup="<%= popup_done_path %>" class="js-auto-popup"></span>
+<% end %>

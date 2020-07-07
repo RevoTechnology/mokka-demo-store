@@ -1,0 +1,9 @@
+<% content_for :meta_title, t('.title') %>
+<% content_for :nav_item, :root %>
+<% content_for :sidebar_content, render('shared/sidebar/frontpage') %>
+
+<article class="frontpage">
+  <div class="content-wrapper">
+    <%= render 'index/index/items' %>
+  </div>
+</article>

@@ -1,0 +1,13 @@
+<% items = Biovision::Components::Shop::Messages.popup_faq%>
+<input type="checkbox" id="popup-faq-control" class="visually-hidden"/>
+<label for="popup-faq-control" class="popup-faq-control-button">FAQ <span>?</span></label>
+<div class="popup-faq-container">
+  <div class="wrapper">
+    <% items.each do |item| %>
+      <details>
+        <summary><%= raw item[locale][0] %></summary>
+        <p><%= raw item[locale][1] %></p>
+      </details>
+    <% end %>
+  </div>
+</div>

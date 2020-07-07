@@ -1,0 +1,19 @@
+<div class="popup-sms">
+  <p class="lead"><%= raw t('popups.sms.lead') %></p>
+
+  <form class="mokka-form" action="<%= done_path(a: 1) %>">
+    <fieldset>
+      <div>
+        <%= hidden_field_tag :a, params[:a], id: nil unless params[:a].blank? %>
+        <%= hidden_field_tag :p, '1', id: nil %>
+        <%= text_field_tag 'code', '1234', placeholder: t(:sms_code), required: true %>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <button class="button-link"><%= t(:send) %></button>
+    </div>
+    <p class="disclaimer">
+      <%= t(:send_again_in) %> <em><span data-decrement-timeout="1000">8</span> <%= t(:seconds) %></em>.
+    </p>
+  </form>
+</div>

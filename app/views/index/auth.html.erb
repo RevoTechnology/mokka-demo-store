@@ -1,0 +1,21 @@
+<% content_for :auth, 1 %>
+<% content_for :nav_item, :auth %>
+<% content_for :sidebar_content, render('shared/sidebar/auth') %>
+<% next_path = params[:from].blank? ? root_path(a: 1) : params[:from] %>
+<article class="auth">
+  <div class="content-wrapper">
+    <p class="lead">
+      Добро пожаловать в личный кабинет Demostore.
+    </p>
+
+    <div class="auth-balance">
+      <h1>твой доступный аванс:<br/>25 000 руб.</h1>
+      <p>Плати равными частями по удобному графику</p>
+      <%= image_tag("logos/#{locale}/mokka-white.svg", alt: t(:logo_alt)) %>
+    </div>
+
+    <div class="continue">
+      <%= link_to('Продолжить покупки', next_path, class: 'buy-button') %>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,18 @@
+<div class="popup-limit">
+  <div class="wrapper">
+    <h4><%= t('.heading') %></h4>
+
+    <p><%= t('.text') %></p>
+    <p>
+      <strong><%= t('.available_amount') %>: <%= raw t('layouts.application.header.advance_value') %></strong>
+    </p>
+
+    <% if params[:cart].blank? %>
+      <%= link_to(t(:continue_shopping), item_path(a: 1), class: 'button-link') %>
+    <% else %>
+      <button type="button" class="button-link" data-popup="<%= pay2_path %>">
+        <%= t(:continue) %>
+      </button>
+    <% end %>
+  </div>
+</div>

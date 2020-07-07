@@ -1,0 +1,171 @@
+@import "shared";
+
+//*{outline: solid pink 1px}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
+
+html {
+  font: 400 10px var(--font-family-main);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  font-size: var(--font-size-normal);
+  display: flex;
+  margin: 0;
+  min-height: 100%;
+  min-width: var(--content-width-min);
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  margin: 0;
+}
+
+[lang=en] {
+  h1,
+  h2,
+  h3 {
+    text-transform: uppercase;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-top: var(--spacer-xs);
+}
+
+strong {
+  font-weight: 500;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  max-width: var(--content-width);
+  padding: 0 var(--spacer-s);
+}
+
+@media (max-width: 375px) {
+  .content-wrapper {
+    padding: 0 var(--spacer-xs);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  border: none;
+  clip: rect(0 0 0 0);
+  height: auto;
+  left: -10000rem;
+  margin: 0;
+  opacity: .05;
+  overflow: hidden;
+  padding: 0;
+  pointer-events: none;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.proportional-container {
+  display: block;
+  padding: 0;
+  position: relative;
+
+  > * {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  &::before {
+    content: '\A';
+    display: block;
+  }
+
+  &.r-1x1::before {
+    padding-top: 100%;
+  }
+
+  &.r-5x4::before {
+    padding-top: 80%;
+  }
+
+  &.r-4x3::before {
+    padding-top: 75%;
+  }
+
+  &.r-3x2::before {
+    padding-top: 66.67%;
+  }
+
+  &.r-16x9::before {
+    padding-top: 56.25%;
+  }
+
+  &.r-2x1::before {
+    padding-top: 50%;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+.button-link {
+  background: var(--main-color-b);
+  border: none;
+  border-radius: 7rem;
+  color: var(--text-color-input);
+  cursor: pointer;
+  display: block;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-normal);
+  font-weight: 500;
+  letter-spacing: 0.08rem;
+  margin: 0 auto;
+  padding: var(--spacer-s) var(--spacer-m);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@import "application/layout/header";
+@import "application/layout/footer";
+@import "application/layout/sidebar";
+@import "application/frontpage";
+@import "application/about";
+@import "application/auth";
+@import "application/components";

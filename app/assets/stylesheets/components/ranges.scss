@@ -1,0 +1,80 @@
+@mixin slider-thumb($margin-top: 0) {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--main-color-b);
+  border: .2rem solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 3.6rem;
+  margin-top: $margin-top;
+  width: 3.6rem;
+}
+
+@mixin slider-track {
+  background: var(--bg-range);
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  height: 1rem;
+  margin: 0;
+  width: 100%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  display: block;
+  margin-top: var(--spacer-s);
+  width: 100%;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  &::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  &::-webkit-slider-thumb {
+    @include slider-thumb(-1.4rem);
+  }
+
+  &::-moz-range-thumb {
+    @include slider-thumb;
+  }
+
+  &::-ms-thumb {
+    @include slider-thumb;
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include slider-track;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: var(--main-color-a);
+  }
+
+  &::-moz-range-track {
+    @include slider-track;
+  }
+
+  &:focus::-moz-range-track {
+    background: var(--main-color-a);
+  }
+
+  &::-ms-track {
+    @include slider-track;
+  }
+
+  &::-ms-fill-lower {
+    background: var(--main-color-a);
+  }
+}

@@ -1,0 +1,27 @@
+summary {
+  background: image_url('icons/dropdown-closed.svg') no-repeat center right 1rem / 1.6rem 1rem;
+  color: var(--text-color-input);
+  cursor: pointer;
+  display: block;
+  padding-right: 3.2rem;
+}
+
+::-webkit-details-marker {
+  display: none;
+}
+
+details {
+  border-bottom: .1rem solid var(--border-color-details);
+  margin-bottom: var(--spacer-s);
+  padding-bottom: var(--spacer-s);
+
+  &[open] {
+    summary {
+      background-image: image_url('icons/dropdown-opened-a.svg');
+    }
+  }
+
+  p {
+    color: var(--text-color-secondary);
+  }
+}

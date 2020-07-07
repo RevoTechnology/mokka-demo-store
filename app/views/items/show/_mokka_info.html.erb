@@ -1,0 +1,22 @@
+<% items = Biovision::Components::Shop::Messages.mokka_popup %>
+<div class="popup-backdrop"></div>
+<aside class="mokka-popup" id="mokka-item-popup">
+  <div class="wrapper">
+    <label for="mokka-info-control"></label>
+    <h3><%= t('.heading') %></h3>
+    <p class="lead"><%= raw t('.lead') %></p>
+
+    <ul>
+      <% items.each do |image, item| %>
+        <li>
+          <figure>
+            <div class="image">
+              <%= image_tag("how/#{image}.png", alt: '') %>
+            </div>
+            <figcaption><%= raw item[locale] %></figcaption>
+          </figure>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</aside>

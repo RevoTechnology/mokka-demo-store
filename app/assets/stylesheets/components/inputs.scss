@@ -1,0 +1,21 @@
+[type=checkbox] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: .1rem solid var(--main-color-a);
+  display: inline-block;
+  height: var(--spacer-s);
+  width: var(--spacer-s);
+
+  &:focus {
+    background-color: var(--main-color-a);
+  }
+
+  &:checked {
+    background: var(--main-color-a) image_url('icons/check.svg') no-repeat center / contain;
+
+    &:focus {
+      background-color: var(--main-color-b);
+    }
+  }
+}

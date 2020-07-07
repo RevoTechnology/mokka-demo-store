@@ -1,0 +1,12 @@
+<div class="popup-limit">
+  <div class="wrapper">
+    <h4><%= t('popups.limit.heading') %></h4>
+
+    <p><%= t('popups.limit.text') %></p>
+    <p>
+      <strong><%= t('popups.limit.available_amount') %>: <%= raw t('layouts.application.header.advance_value') %></strong>
+    </p>
+
+    <%= link_to(t(:continue_shopping), root_path(a: 1), class: 'button-link') %>
+  </div>
+</div>

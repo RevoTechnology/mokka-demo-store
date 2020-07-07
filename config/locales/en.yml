@@ -1,0 +1,122 @@
+en:
+  copyright: "2020 Demostore"
+  layouts:
+    application:
+      header:
+        name: "Maria S."
+        advance_text: "Your available advance"
+        advance_value: "€400"
+        log_in: "Sign in"
+        cart: "Cart"
+  index:
+    index:
+      items:
+        add_to_cart: "Add to cart"
+      title: "Main page of store"
+    about:
+      header:
+        heading: "Pay the sweetest way!"
+        lead_a: "Buy what you want now, pay later in equal parts with 3 to 12 monthly payments."
+        lead_b: "From €0 / month. Minimum order €30"
+      how:
+        heading: "How it works"
+      form:
+        heading: "register in 2 clicks<br/>and buy now pay later"
+        surname: "Last name"
+        surname_sample: "Snow"
+        name: "First name"
+        name_sample: "Maria"
+        birthday: "Birth date"
+        phone: "Mobile number"
+        passport: "Passport/ID"
+      footer:
+        heading: "any questions left?"
+      title: "Landing"
+  logo_alt: "Mokka. Your sweet advance"
+  register_in_two_clicks: "register in two clicks"
+  phone_sample: "+44 (123) 000-00-01"
+  phone_mask: "+44 (000) 000-00-00"
+  consent_a: "By clicking the <q>register</q> button, I agree to"
+  consent_b: "my personal data being processed and transferred"
+  items:
+    show:
+      name: "Trainers"
+      price_value: "€84"
+      minimal_payment: "From €7/month"
+      pay_in_advance: "Pay with advance"
+      size: "Size"
+      description: "Chunky trainers are still rocking the fashion scene in style. This choice of footwear is designed with bright orange colour. Exaggerated soles elevate your daytime look."
+      mokka_info:
+        heading: "Pay the sweeter way!"
+        lead: "Buyt what you want now, pay later in equal parts with 3 to 12 monthly payments. Fees from €0 / month. Minimum order €30"
+      title: "Product page"
+    cart:
+      heading: "Cart"
+      order: "Order"
+      item_name: "Trainers"
+      delivery: "Delivery"
+      discount: "Discount"
+      total: "Total"
+      name_sample: "Maria Snow"
+      name: "Your name"
+      address_sample: "Coffee street, 1A"
+      address: "Delivery address"
+      comment: "Comments"
+      payment_options: "Payment options"
+      mokka_advance: "Mokka — Pay with advance"
+      cash: "Cash or card on delivery"
+      online: "Card online"
+      proceed: "Proceed to checkout"
+      item_price: "€84"
+      delivery_price: "€12"
+      discount_value: "€0"
+      total_value: "€93"
+      title: "Check-out"
+    done:
+      heading: "Your order №1234 is successfully processed!"
+      text: "Our manager will contact you on delivery details shortly."
+      paid_with_advance: "Your order is paid with Mokka- Pay with Advance"
+      to_main_page: "Go to the main page"
+      title: "Order confirmation"
+  quantity: "Quantity"
+  add_to_cart: "Add to cart"
+  popups:
+    form:
+      already_registered: "Already registered?"
+      lead: "Buy what you want now, pay later in equal parts with 3 to 12 monthly payments. From €0 / month. Minimum order €30"
+    phone:
+      lead: "Enter your mobile phone number"
+    sms:
+      lead: "Enter the SMS code we sent<br/>to your number <em>+44 (123) 000-00-01</em>"
+    limit:
+      heading: "Congrats!"
+      text: "Your advance for shopping in online DEMO STORE is ready"
+      available_amount: "Available advance"
+    pay:
+      available_amount: "Available advance"
+    pay2:
+      heading: "Order №1234 for total €96:"
+      to_pay_in_advance: "To pay with advance"
+      repayment_period: "Repayment period"
+      to_pay_with_card: "To pay by credit card"
+      enter_card_data: "Enter your credit card details"
+      card_number: "Number"
+      cardholder: "Cardholder"
+      additional_reminders: "Additional reminders"
+      insurance: "Payment protection"
+      total_to_pay: "Total to pay"
+      monthly_payment: "Monthly payment"
+      disclaimer_a: "By proceeding, I accept the"
+      disclaimer_b: "Mokka’s Services Terms"
+    done:
+      heading: "Congrats!"
+      completed: "Your purchase was successful.<br/>Sit back and wait for delivery!"
+  send: "send"
+  send_again_in: "Send again in"
+  seconds: "sec"
+  sms_code: "SMS-code"
+  continue: "continue"
+  continue_shopping: "continue shopping"
+  currency_sign: "€"
+  months: "months"
+  remaining_advance: "€304"

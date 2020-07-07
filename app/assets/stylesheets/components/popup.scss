@@ -1,0 +1,281 @@
+.main-popup {
+  -webkit-backdrop-filter: blur(.5rem) grayscale(.75);
+  backdrop-filter: blur(.5rem) grayscale(.75);
+  background: rgba(0, 0, 0, .4);
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  overflow-y: scroll;
+  padding: var(--spacer-s);
+  position: fixed;
+  transition: .25s;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+
+  > .wrapper {
+    --max-width: 55rem;
+    background: #fff;
+    border-radius: 2rem;
+    box-shadow: var(--popup-shadow);
+    margin: auto;
+    max-width: var(--max-width);
+    padding: var(--spacer-m);
+    position: relative;
+  }
+
+  .close {
+    background: image_url('icons/close.svg') no-repeat center / 2rem auto;
+    cursor: pointer;
+    display: block;
+    height: 3rem;
+    position: absolute;
+    right: var(--spacer-s);
+    top: var(--spacer-s);
+    width: 3rem;
+  }
+
+  .popup-header {
+    align-items: center;
+    display: flex;
+    position: relative;
+
+    .logo {
+      align-items: center;
+      display: flex;
+      height: 3rem;
+      padding: var(--spacer-xxs) var(--spacer-s);
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:not(:first-of-type) {
+        border-left: .2rem solid var(--border-color-details);
+        height: 2rem;
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .faq-container {
+    margin-left: auto;
+    padding-right: var(--spacer-s);
+  }
+
+  .auth-block {
+    align-items: center;
+    display: flex;
+    font-size: var(--font-size-decreased);
+    justify-content: flex-end;
+    margin: var(--spacer-s) 0;
+
+    .button-link {
+      font: inherit;
+      letter-spacing: 0;
+      margin: 0 0 0 var(--spacer-xxs);
+      padding: var(--spacer-xxs) var(--spacer-xs);
+    }
+  }
+
+  h3 {
+    color: var(--main-color-a);
+    font-size: var(--font-size-large);
+  }
+}
+
+@media (max-width: 500px) {
+  .main-popup {
+    .popup-header {
+      margin-top: var(--spacer-xs);
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .main-popup {
+    .wrapper {
+      padding: var(--spacer-m) var(--spacer-s);
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .main-popup {
+    padding: var(--spacer-s) var(--spacer-xs);
+  }
+}
+
+#main-popup-control {
+  &:not(:checked) {
+    ~ .main-popup {
+      display: none;
+    }
+  }
+}
+
+.popup-faq-control-button {
+  align-items: center;
+  color: var(--popup-faq-color);
+  cursor: pointer;
+  display: flex;
+
+  span {
+    align-items: center;
+    border: .1rem solid;
+    border-radius: 50%;
+    display: flex;
+    height: 2.2rem;
+    justify-content: center;
+    margin-left: var(--spacer-xs);
+    width: 2.2rem;
+  }
+}
+
+.popup-faq-container {
+  filter: drop-shadow(.2rem .2rem 1.2rem rgba(0, 0, 0, .3));
+  font-size: var(--font-size-decreased);
+  transition: .5s;
+  position: absolute;
+  right: calc(var(--spacer-xs) * -1);
+  top: 100%;
+  z-index: 2;
+
+  .wrapper {
+    background: #fff;
+    border-radius: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% var(--spacer-s), calc(100% - var(--spacer-s)) var(--spacer-s), calc(100% - var(--spacer-m)) 0, calc(100% - var(--spacer-s) * 3) var(--spacer-s), 0 var(--spacer-s));
+    padding: var(--spacer-m);
+    position: relative;
+  }
+}
+
+#popup-faq-control {
+  &:not(:checked) {
+    ~ .popup-faq-container {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.mokka-form {
+  fieldset {
+    border: none;
+    margin: 0 0 var(--spacer-s);
+    padding: 0;
+
+    > div {
+      margin-bottom: var(--spacer-s);
+    }
+  }
+
+  input {
+    background: var(--bg-shop-detail) no-repeat center right 2rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: var(--font-size-decreased);
+    margin: 0;
+    padding: var(--spacer-xs) var(--spacer-s);
+    width: 100%;
+  }
+
+  .date {
+    input {
+      background-image: image_url('icons/calendar.svg');
+    }
+  }
+
+  .buttons {
+    margin-top: var(--spacer-m);
+
+    .button-link {
+      max-width: 49.1rem;
+      width: 100%;
+    }
+  }
+
+  .disclaimer {
+    color: var(--text-color-secondary);
+    font-size: var(--font-size-small);
+    margin: var(--spacer-s) auto;
+    max-width: 40.2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .mokka-form {
+    .buttons {
+      margin-top: var(--spacer-s);
+    }
+  }
+}
+
+.register-form {
+  fieldset {
+    > div {
+      margin-bottom: var(--spacer-xs);
+    }
+  }
+}
+
+.popup-sms {
+  .lead {
+    color: var(--text-color-secondary);
+    font-size: var(--font-size-decreased);
+    margin: var(--spacer-m) auto;
+    max-width: 35rem;
+    text-align: center;
+  }
+
+  form {
+    margin: 0 auto;
+    max-width: 35rem;
+
+    input {
+      padding: var(--spacer-s) var(--spacer-m);
+    }
+  }
+
+  em {
+    color: var(--main-color-a);
+    font-style: normal;
+  }
+}
+
+.popup-done,
+.popup-limit {
+  .wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 35rem;
+  }
+
+  h4 {
+    color: var(--main-color-a);
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-large);
+    margin: var(--spacer-m) auto;
+    text-align: center;
+  }
+
+  p {
+    color: var(--text-color-secondary);
+    text-align: center;
+  }
+
+  strong {
+    color: var(--text-color-primary);
+  }
+
+  label {
+    margin-top: var(--spacer-m);
+    text-align: center;
+  }
+}
+
+@import "components/popup/pay";

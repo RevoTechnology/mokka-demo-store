@@ -1,0 +1,122 @@
+<div class="popup-pay">
+  <div class="limit">
+    <%= t('popups.pay.available_amount') %>: <strong><%= raw t('layouts.application.header.advance_value') %></strong>
+  </div>
+
+  <h4><%= t('.heading') %></h4>
+
+  <dl class="popup-cart">
+    <div>
+      <dt><%= t('items.cart.item_name') %></dt>
+      <dd><%= t('items.cart.item_price') %></dd>
+    </div>
+    <div>
+      <dt><%= t('items.cart.delivery') %></dt>
+      <dd><%= t('items.cart.delivery_price') %></dd>
+    </div>
+  </dl>
+
+  <dl class="popup-cart">
+    <div>
+      <dt><%= t('.to_pay_in_advance') %></dt>
+      <dd>
+        <% if locale == :ru %>
+          <span class="mokka-payment-sum">6600</span> <%= t(:currency_sign) %>
+        <% else %>
+          <%= t(:currency_sign) %><span class="mokka-payment-sum">96</span>
+        <% end %>
+      </dd>
+    </div>
+  </dl>
+
+  <form class="js-popup-form" action="<%= sms2_path(a: params[:a]) %>">
+    <div class="fieldsets">
+      <fieldset>
+        <div class="time">
+          <div class="range-wrapper">
+            <label for="range"><%= t('.repayment_period') %>: <span id="pay-range-value">6</span> <%= t(:months) %>.</label>
+            <input type="range" id="range" data-value="pay-range-value" min="3" max="12" step="3" value="6" required/>
+            <ul class="ticks">
+              <li>3</li>
+              <li>6</li>
+              <li>9</li>
+              <li>12</li>
+            </ul>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="time">
+          <div class="range-wrapper">
+            <label for="pay-percent-range">
+              <%= t('.to_pay_with_card') %>:
+              <% if locale == :ru %>
+                <span class="mokka-payment-card">0</span> <%= t(:currency_sign) %>
+              <% else %>
+                <%= t(:currency_sign) %><span class="mokka-payment-card">0</span>
+              <% end %>
+            </label>
+            <input type="range" id="pay-percent-range" min="0" max="100" step="10" value="0" required/>
+            <ul class="ticks percents">
+              <li>0%</li>
+              <li>20%</li>
+              <li>40%</li>
+              <li>60%</li>
+              <li>80%</li>
+              <li>100%</li>
+            </ul>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <div><%= t('.enter_card_data') %>:</div>
+
+      <div class="card-fields">
+        <input class="card-number" data-mask="0000 0000 0000 0000" value="4000 0001 0002 0003" placeholder="<%= t('.card_number') %>" required/>
+        <input class="card-name" placeholder="<%= t('.cardholder') %>" value="Cardholder Name" required/>
+        <input class="card-date" data-mask="00/00" placeholder="12/21" value="12/23" size="5" maxlength="5" required/>
+        <input class="card-cvv" type="password" data-mask="000" size="3" maxlength="3" value="420" placeholder="CVV" required/>
+      </div>
+    </div>
+
+    <fieldset>
+      <div class="flags">
+        <div>
+          <input type="checkbox" id="pay-flag-info" name="flags[info]" checked/>
+          <label for="pay-flag-info"><%= t('.additional_reminders') %></label>
+        </div>
+        <div>
+          <input type="checkbox" id="pay-flag-insure" name="flags[insure]" checked/>
+          <label for="pay-flag-insure"><%= t('.insurance') %></label>
+        </div>
+      </div>
+
+      <dl class="summary">
+        <div>
+          <dt><%= t('.total_to_pay') %></dt>
+          <dd><%= t('items.cart.total_value') %></dd>
+        </div>
+        <div>
+          <dt><%= t('.monthly_payment') %></dt>
+          <dd>
+            <% if locale == :ru %>
+              <span class="mokka-payment-monthly">1100</span> <%= t(:currency_sign) %>
+            <% else %>
+              <%= t(:currency_sign) %><span class="mokka-payment-monthly">8</span>
+            <% end %>
+          </dd>
+        </div>
+      </dl>
+
+      <button class="button-link"><%= t('items.show.pay_in_advance') %></button>
+
+      <div class="disclaimer">
+        <%= raw t('.disclaimer_a') %>
+        <a href="#"><%= t('.disclaimer_b') %></a>.
+      </div>
+    </fieldset>
+  </form>
+</div>

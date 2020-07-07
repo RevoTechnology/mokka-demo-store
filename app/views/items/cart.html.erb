@@ -1,0 +1,89 @@
+<% content_for :meta_title, t('.title') %>
+<% content_for :nav_item, :cart %>
+<% content_for :sidebar_content, render('shared/sidebar/cart') %>
+
+<article class="cart-review">
+  <div class="content-wrapper">
+    <h1><%= t('.heading') %></h1>
+    <% popup_link = phone_path(cart: 1) %>
+    <form action="<%= popup_link %>" class="js-popup-form">
+
+      <section class="cart-details">
+        <section class="cart-order">
+          <h2><%= t('.order') %></h2>
+          <dl>
+            <div>
+              <dt>1 &times; <%= t('.item_name') %></dt>
+              <dd><%= t('.item_price') %></dd>
+            </div>
+            <div>
+              <dt><%= t('.delivery') %></dt>
+              <dd><%= t('.delivery_price') %></dd>
+            </div>
+            <div>
+              <dt><%= t('.discount') %></dt>
+              <dd><%= t('.discount_value') %></dd>
+            </div>
+            <div>
+              <dt><%= t('.total') %></dt>
+              <dd><%= t('.total_value') %></dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="cart-delivery">
+          <h2><%= t('.delivery') %></h2>
+
+          <ul>
+            <li><input type="text" value="<%= t('.name_sample') %>" placeholder="<%= t('.name') %>" required/> </li>
+            <li><input type="text" value="<%= t('.address_sample') %>" placeholder="<%= t('.address') %>" required/></li>
+            <li><input type="tel" value="<%= t(:phone_sample) %>" placeholder="<%= t('index.about.form.phone') %>" required/></li>
+            <li><input type="text" placeholder="<%= t('.comment') %>"/></li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="cart-payment">
+        <h2><%= t('.payment_options') %></h2>
+
+        <ul>
+          <li id="mokka-cart-info">
+            <input type="radio" name="cart_payment" id="payment-1" checked/>
+            <div class="mokka">
+              <button><%= t('.mokka_advance') %></button>
+              <label class="popup-control" for="mokka-info-control" id=mokka-info-button>?</label>
+              <%= image_tag('mokka-rectangle.svg', alt: 'Mokka') %>
+              <input type="checkbox" id="mokka-info-control" class="popup-control visually-hidden">
+              <%= render 'items/show/mokka_info' %>
+            </div>
+          </li>
+          <li>
+            <input type="radio" name="cart_payment" id="payment-2"/>
+            <div>
+              <label for="payment-2"><%= t('.cash') %></label>
+              <%= image_tag('payment.svg', alt: '') %>
+            </div>
+          </li>
+          <li>
+            <input type="radio" name="cart_payment" id="payment-3"/>
+            <div>
+              <label for="payment-3">Google Pay</label>
+              <%= image_tag('payment.svg', alt: '') %>
+            </div>
+          </li>
+          <li>
+            <input type="radio" name="cart_payment" id="payment-4"/>
+            <div>
+              <label for="payment-4"><%= t('.online') %></label>
+              <%= image_tag('payment.svg', alt: '') %>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <button class="buy-button" id="cart-submit-button"><%= t('.proceed') %></button>
+      </footer>
+    </form>
+  </div>
+</article>

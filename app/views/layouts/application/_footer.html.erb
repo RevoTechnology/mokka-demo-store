@@ -1,0 +1,13 @@
+<footer class="main-footer" id="main-footer">
+  <div class="content-wrapper">
+    <div>
+      <div class="copyright">&copy; <%= t(:copyright) %></div>
+      <div class="site">www.demostore.ru</div>
+    </div>
+    <ul class="payment">
+      <li><%= link_to(image_tag("logos/#{locale}/mokka-gray.svg", alt: t(:logo_alt)), about_path) %></li>
+      <li><%= image_tag('logos/mastercard.svg', alt: 'Mastercard') %></li>
+      <li><%= image_tag('logos/visa.svg', alt: 'Visa') %></li>
+    </ul>
+  </div>
+</footer>

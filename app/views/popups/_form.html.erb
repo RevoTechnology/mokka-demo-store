@@ -1,0 +1,96 @@
+<div class="auth-block">
+  <%= t('.already_registered') %>
+  <a href="#" data-popup="<%= phone_path(cart: params[:cart]) %>" class="button-link"><%= t(:'layouts.application.header.log_in') %></a>
+</div>
+
+<h3><%= raw t('index.about.form.heading') %></h3>
+<p class="lead"><%= t('.lead') %></p>
+
+<form class="mokka-form register-form js-popup-form" action="<%= sms_path(cart: params[:cart]) %>">
+  <fieldset>
+    <div>
+      <%=
+        text_field_tag(
+            'user[surname]',
+            t('index.about.form.surname_sample'),
+            placeholder: t('index.about.form.surname'),
+            required: true
+        )
+      %>
+    </div>
+    <div>
+      <%=
+        text_field_tag(
+            'user[name]',
+            t('index.about.form.name_sample'),
+            placeholder: t('index.about.form.name'),
+            required: true
+        )
+      %>
+    </div>
+    <% if locale == :ru %>
+      <div>
+        <%=
+          text_field_tag(
+              'user[patronymic]',
+              'Иванович',
+              placeholder: 'Отчество',
+              required: true
+          )
+        %>
+      </div>
+    <% end %>
+    <div class="date">
+      <%=
+        text_field_tag(
+            'user[birthday]',
+            '01.01.2000',
+            data: { mask: '00.00.0000' },
+            required: true,
+            placeholder: t('index.about.form.birthday'),
+            size: 10
+        )
+      %>
+    </div>
+    <div>
+      <%=
+        telephone_field_tag(
+            'user[phone]',
+            t(:phone_sample),
+            data: { mask: t(:phone_mask) },
+            placeholder: t('index.about.form.phone'),
+            required: true
+        )
+      %>
+    </div>
+    <div>
+      <%=
+        email_field_tag(
+            'user[email]',
+            'user@example.com',
+            placeholder: 'E-mail',
+            required: true
+        )
+      %>
+    </div>
+    <div>
+      <%=
+        text_field_tag(
+            'user[passport]',
+            '12 34 123456',
+            data: { mask: '00 00 000000' },
+            required: true,
+            placeholder: t('index.about.form.passport'),
+            maxlength: 12
+        )
+      %>
+    </div>
+  </fieldset>
+  <div class="buttons">
+    <button class="button-link"><%= t(:register_in_two_clicks) %></button>
+  </div>
+  <p class="disclaimer">
+    <%= raw t(:consent_a) %>
+    <%= link_to(t(:consent_b), '#') %>.
+  </p>
+</form>

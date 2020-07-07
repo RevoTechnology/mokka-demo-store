@@ -1,0 +1,102 @@
+.about-form {
+  padding: var(--spacer-m) 0;
+
+  h2 {
+    margin: 0 auto;
+    max-width: 87rem;
+  }
+
+  form {
+    margin: var(--spacer-m) auto 0;
+    max-width: 66.2rem;
+  }
+
+  fieldset {
+    border: none;
+
+    div {
+      background: var(--bg-shop-detail) no-repeat center right 2rem;
+      border-radius: 2rem;
+      margin: 1.8rem 0;
+      padding: .6rem 2.4rem;
+    }
+  }
+
+  .date {
+    background-image: image_url('icons/calendar.svg');
+  }
+
+  label {
+    color: var(--text-color-input);
+    display: block;
+    font-size: 1.4rem;
+    opacity: .4;
+    padding-bottom: .4rem;
+  }
+
+  legend {
+    font-size: 2.4rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .notice {
+    color: var(--main-color-a);
+    font-size: var(--font-size-decreased);
+    margin: 0;
+    padding-bottom: .4rem;
+  }
+
+  input {
+    background: none;
+    border: none;
+    color: var(--text-color-input);
+    font-size: var(--font-size-normal);
+    margin: 0;
+    padding: 0;
+
+    &:not([size]) {
+      width: 100%;
+    }
+
+    &:focus {
+      //border-bottom: .1rem solid var(--text-color-input);
+      outline: none;
+    }
+  }
+
+  .buttons {
+    margin-top: var(--spacer-m);
+
+    .button-link {
+      max-width: 49.1rem;
+      width: 100%;
+    }
+  }
+
+  .disclaimer {
+    color: var(--text-color-secondary);
+    font-size: var(--font-size-small);
+    margin: var(--spacer-s) auto;
+    max-width: 40.2rem;
+    text-align: center;
+  }
+
+  q {
+    font-weight: 700;
+    quotes: none;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .popup-sms {
+    fieldset {
+      > div {
+        background: none;
+        border: none;
+      }
+    }
+  }
+}

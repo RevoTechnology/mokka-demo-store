@@ -1,0 +1,63 @@
+@import "shared";
+
+:root {
+  --font-family-heading: #{$font-family-heading};
+  --font-family-main: #{$font-family-main};
+  --font-family-shop: #{$font-family-shop};
+
+  --font-size-xxxl: #{$font-size-xxxl};
+  --font-size-xxl: #{$font-size-xxl};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-cart: #{$font-size-cart};
+  --font-size-large: #{$font-size-large};
+  --font-size-increased: #{$font-size-increased};
+  --font-size-normal: #{$font-size-normal};
+  --font-size-decreased: #{$font-size-decreased};
+  --font-size-small: #{$font-size-small};
+  --font-size-xs: #{$font-size-xs};
+
+  --content-width: #{$content-width};
+  --content-width-min: #{$content-width-min};
+
+  --spacer-s: #{$spacer-s};
+  --spacer-xxxs: .2rem;
+  --spacer-xxs: calc(var(--spacer-s) / 4);
+  --spacer-xs: calc(var(--spacer-s) / 2);
+  --spacer-m: calc(var(--spacer-s) * 2);
+  --spacer-l: calc(var(--spacer-s) * 3);
+  --spacer-xl: calc(var(--spacer-s) * 4);
+  --spacer-xxl: calc(var(--spacer-s) * 6);
+
+  --main-color-a: #{$main-color-a};
+  --main-color-b: #{$main-color-b};
+  --main-color-a-transparent: #{$main-color-a-transparent};
+  --main-color-b-transparent: #{$main-color-b-transparent};
+
+  --text-color-primary: #{$text-color-primary};
+  --text-color-secondary: #{$text-color-secondary};
+  --text-color-inverted-primary: #{$text-color-inverted-primary};
+  --text-color-input: #{$text-color-input};
+  --text-color-cart: #{$text-color-cart};
+  --text-color-flag: #{$text-color-flag};
+
+  --bg-secondary: #{$bg-secondary};
+  --bg-shop-item: #{$bg-shop-item};
+  --bg-shop-detail: #{$bg-shop-detail};
+
+  --border-color-secondary: #{$border-color-secondary};
+  --border-color-details: #{$border-color-details};
+
+  --info-color: #{$info-color};
+  --detail-color: #{$detail-color};
+
+  --cart-border-color: #{$cart-border-color};
+  --cart-radio-color: #{$cart-radio-color};
+  --cart-width: #{$cart-width};
+
+  --sidebar-bg: #{$sidebar-bg};
+
+  --popup-shadow: #{$popup-shadow};
+  --popup-faq-color: #{$popup-faq-color};
+
+  --bg-range: #{$bg-range};
+}

@@ -1,0 +1,42 @@
+.about {
+  h1,
+  h2 {
+    color: var(--main-color-a);
+    text-align: center;
+  }
+
+  h1 {
+    font-size: var(--font-size-xl);
+    margin-top: var(--spacer-m);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .cta {
+    text-align: center;
+  }
+
+  .button-link {
+    max-width: 47.52rem;
+  }
+
+  .popup-limit {
+    margin-bottom: var(--spacer-m);
+  }
+}
+
+[lang=ru] {
+  .about {
+    h1,
+    h2 {
+      text-transform: lowercase;
+    }
+  }
+}
+
+@import "application/about/header";
+@import "application/about/how";
+@import "application/about/form";
+@import "application/about/footer";

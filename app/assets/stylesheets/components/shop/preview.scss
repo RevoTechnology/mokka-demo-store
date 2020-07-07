@@ -1,0 +1,50 @@
+.item-preview {
+  font-family: var(--font-family-shop);
+
+  .image {
+    position: relative;
+  }
+
+  figure {
+    background: var(--bg-shop-item);
+
+    a {
+      align-items: center;
+      display: flex;
+      mix-blend-mode: darken;
+    }
+
+    img {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  .buy-button {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  .details {
+    font-size: var(--font-size-increased);
+    line-height: 1.25;
+    margin-top: var(--spacer-s);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:active,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .price {
+    font-size: var(--font-size-increased);
+    font-weight: 700;
+  }
+}

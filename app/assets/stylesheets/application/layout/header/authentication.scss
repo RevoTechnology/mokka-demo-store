@@ -1,0 +1,20 @@
+.header-authentication {
+  font-size: var(--font-size-increased);
+  line-height: 1;
+  margin: 0 var(--spacer-s) 0 0;
+
+  .info {
+    max-width: 16rem;
+    text-align: right;
+
+    div {
+      font-size: var(--font-size-decreased);
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .header-authentication {
+    margin-right: var(--spacer-xs);
+  }
+}

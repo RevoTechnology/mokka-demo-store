@@ -1,0 +1,23 @@
+<% items = Biovision::Components::Shop::Messages.landing_how %>
+<section class="about-how">
+  <h2><%= t('.heading') %></h2>
+
+  <ul>
+    <% items.each do |image, item| %>
+      <li>
+        <figure>
+          <div class="image">
+            <%= image_tag("how/#{image}.png", alt: '') %>
+          </div>
+          <figcaption><%= raw item[locale] %></figcaption>
+        </figure>
+      </li>
+    <% end %>
+  </ul>
+
+  <% if params[:a].blank? %>
+    <div class="cta">
+      <%= link_to(t(:register_in_two_clicks), '#register-form', class: 'button-link') %>
+    </div>
+  <% end %>
+</section>

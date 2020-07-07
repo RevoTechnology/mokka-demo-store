@@ -1,0 +1,42 @@
+<%
+  items = [
+      ['sneakers', { ru: 'Кроссовки для бега', en: 'Trainers' }, { ru: '6 000 руб.', en: '€84' }],
+      ['camera', { ru: 'Одноразовый фотоаппарат', en: 'Digital camera' }, { ru: '3 000 руб.', en: '€40' }],
+      ['sunglasses', { ru: 'Солнцезащитные очки', en: 'Sunglasses' }, { ru: '3 000 руб.', en: '€40' }],
+      ['bag', { ru: 'Женская сумка', en: 'Ladies’ bag' }, { ru: '3 600 руб.', en: '€45' }],
+      ['watch', { ru: 'Фитнес-браслет', en: 'Fitness band' }, { ru: '4 500 руб.', en: '€55' }],
+  ]
+%>
+<section class="frontpage-items">
+  <ul>
+    <% items.each_with_index do |item, index| %>
+      <li>
+        <div class="item-preview">
+          <div class="image">
+            <figure class="proportional-container r-1x1">
+              <%= link_to(image_tag("items/#{item[0]}.jpg", alt: ''), item_path(a: params[:a])) %>
+            </figure>
+            <%= link_to(t('.add_to_cart'), item_path(a: params[:a]), class: 'buy-button') %>
+          </div>
+          <div class="details">
+            <div class="name"><%= link_to(item[1][locale], item_path(a: params[:a])) %></div>
+            <div class="price"><%= item[2][locale] %></div>
+          </div>
+        </div>
+      </li>
+      <% if index == 1 %>
+        <li>
+          <%=
+            link_to(
+                image_tag("frontpage/#{locale}/vertical-banner.png", alt: ''),
+                about_path,
+                class: 'items-banner',
+                data: { popup: form_path },
+                id: 'index-items-banner'
+            )
+          %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</section>

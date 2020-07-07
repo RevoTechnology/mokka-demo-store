@@ -1,0 +1,39 @@
+.main-header {
+  a {
+    color: inherit;
+  }
+
+  .content-wrapper {
+    align-items: center;
+    display: flex;
+  }
+
+  .logo {
+    display: flex;
+    margin-right: auto;
+    width: 20rem;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .main-header {
+    .logo {
+      width: 16rem;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .main-header {
+    .logo {
+      width: 12rem;
+    }
+  }
+}
+
+@import "application/layout/header/authentication";
+@import "application/layout/header/cart";

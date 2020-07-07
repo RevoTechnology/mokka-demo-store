@@ -1,0 +1,16 @@
+<%=
+  check_box_tag(
+      'sidebar_state',
+      '1',
+      !cookies[:sb].blank?,
+      class: 'visually-hidden',
+      id: 'sidebar-control'
+  )
+%>
+<aside class="sidebar-main">
+  <nav>
+    <label for="sidebar-control" class="sidebar-close"></label>
+    <%= render 'shared/sidebar/nav' %>
+  </nav>
+</aside>
+<label for="sidebar-control" class="sidebar-button"></label>

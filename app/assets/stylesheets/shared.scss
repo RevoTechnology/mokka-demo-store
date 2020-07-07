@@ -1,0 +1,59 @@
+$font-family-heading: "Odds", sans-serif;
+$font-family-main: "Rubik", sans-serif;
+$font-family-shop: "Proxima Nova", sans-serif;
+
+$content-width: 75.6rem;
+$content-width-min: 32rem;
+
+$font-size-xxxl: 5.2rem;
+$font-size-xxl: 4.5rem;
+$font-size-xl: 3.5rem;
+$font-size-cart: 3.2rem;
+$font-size-large: 2.8rem;
+$font-size-increased: 1.8rem;
+$font-size-normal: 1.6rem;
+$font-size-decreased: 1.3rem;
+$font-size-small: 1.1rem;
+$font-size-xs: 1rem;
+
+$spacer-s: 1.6rem;
+$spacer-xxxs: .2rem;
+$spacer-xxs: #{$spacer-s / 4};
+$spacer-xs: #{$spacer-s / 2};
+$spacer-m: #{$spacer-s * 2};
+$spacer-l: #{$spacer-s * 3};
+$spacer-xl: #{$spacer-s * 4};
+$spacer-xxl: #{$spacer-s * 6};
+
+$main-color-a: #ff5a1e;
+$main-color-b: #ffd035;
+$main-color-a-transparent: rgba(255, 90, 30, .5);
+$main-color-b-transparent: rgba(255, 208, 53, .5);
+
+$text-color-primary: #000;
+$text-color-secondary: #a0a0a0;
+$text-color-inverted-primary: #fff;
+$text-color-input: #323232;
+$text-color-cart: #707070;
+$text-color-flag: rgba(140, 140, 140, .6);
+
+$bg-secondary: #f7f8fa;
+$bg-shop-item: #eee;
+$bg-shop-detail: #f7f7f7;
+
+$border-color-secondary: #e3e3e3;
+$border-color-details: #e0e0e0;
+
+$info-color: #c4c4c4;
+$detail-color: #aaa;
+
+$cart-border-color: #d6d6d6;
+$cart-radio-color: #a6a6a6;
+$cart-width: 84.6rem;
+
+$sidebar-bg: #f0f0f0;
+
+$popup-shadow: 0 1rem 4rem rgba(0, 0, 0, .1);
+$popup-faq-color: #4f4f4f;
+
+$bg-range: rgba(140, 140, 140, .4);

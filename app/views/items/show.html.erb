@@ -1,0 +1,66 @@
+<% content_for :meta_title, t('.title') %>
+<% content_for :nav_item, :item %>
+<% content_for :sidebar_content, render('shared/sidebar/item') %>
+<% button_url = params[:a].blank? ? form_path : limit_path %>
+<article>
+  <div class="content-wrapper item-details">
+    <figure>
+      <%= image_tag('items/sneakers.jpg', alt: '') %>
+    </figure>
+    <section class="options">
+      <h1><%= t('.name') %></h1>
+      <div class="price"><%= t('.price_value') %></div>
+      <div class="mokka" id="item-mokka-price">
+        <div class="payment">
+          <span data-popup="<%= button_url %>"><%= t('.minimal_payment') %></span>
+          <button type="button" class="js-mokka-button" data-popup="<%= button_url %>">
+            <%= image_tag('mokka.svg', alt: '') %>
+          </button>
+        </div>
+        <div class="type">
+          <%= t('.pay_in_advance') %>
+          <label class="control-button" for="mokka-info-control" id="mokka-info-button">?</label>
+        </div>
+        <input type="checkbox" id="mokka-info-control" class="popup-control visually-hidden">
+        <%= render 'items/show/mokka_info' %>
+      </div>
+      <dl class="details">
+        <div>
+          <dt><%= t('.size') %></dt>
+          <dd>
+            <% sizes = %w[41 42 42.5 43 43.5] %>
+            <ul>
+              <% sizes.each_with_index do |size, index| %>
+                <li>
+                  <%=
+                    radio_button_tag(
+                        'size',
+                        size,
+                        index == 0,
+                        class: 'visually-hidden',
+                        id: "size_#{index}")
+                  %>
+                  <%= label_tag("size_#{index}", size) %>
+                </li>
+              <% end %>
+            </ul>
+          </dd>
+        </div>
+        <div>
+          <dt><%= t(:quantity) %></dt>
+          <dd>
+            <div class="quantity-selector">
+              <button class="decrement" type="button">&minus;</button>
+              <input type="text" pattern="\d+" value="1" id="item-quantity" readonly/>
+              <button class="increment" type="button">&plus;</button>
+            </div>
+          </dd>
+        </div>
+      </dl>
+      <button class="js-cart-button buy-button" data-count="item-quantity"><%= t(:add_to_cart) %></button>
+    </section>
+    <section class="description">
+      <p><%= t('.description') %></p>
+    </section>
+  </div>
+</article>

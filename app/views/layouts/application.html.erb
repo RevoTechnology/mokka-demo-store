@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Demostore: <%= yield :meta_title %></title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <%= yield :alternate_links %>
+  <%= render 'shared/meta_texts' %>
+  <script defer src="https://unpkg.com/imask"></script>
+</head>
+<body>
+<%= render 'layouts/application/sidebar' %>
+<main id="main">
+  <%= render 'layouts/application/header' %>
+  <div class="main-wrapper">
+    <%= render 'shared/flash_messages' %>
+    <%= render 'shared/breadcrumbs' %>
+
+    <%= yield %>
+  </div>
+  <%= render 'layouts/application/footer' %>
+  <%= render 'layouts/application/popup_container' %>
+</main>
+</body>
+</html>

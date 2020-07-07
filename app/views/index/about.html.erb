@@ -1,0 +1,16 @@
+<% content_for :meta_title, t('.title') %>
+<% content_for :nav_item, :about %>
+<% content_for :sidebar_content, render('shared/sidebar/about') %>
+
+<article class="about">
+  <div class="content-wrapper">
+    <%= render 'index/about/header' %>
+    <%= render 'index/about/how' %>
+    <% if params[:a].blank? %>
+      <%= render 'index/about/form' %>
+    <% else %>
+      <%= render 'popups/local_limit' %>
+    <% end %>
+  </div>
+  <%= render 'index/about/footer' %>
+</article>

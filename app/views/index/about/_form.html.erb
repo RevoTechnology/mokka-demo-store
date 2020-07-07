@@ -1,0 +1,72 @@
+<section class="about-form" id="register-form">
+  <h2><%= raw t('.heading') %></h2>
+
+  <div class="js-local-container">
+    <form class="js-local-form" action="<%= local_sms_path %>">
+      <fieldset>
+        <div>
+          <%= label_tag 'user_surname', t('.surname') %>
+          <%= text_field_tag 'user[surname]', t('.surname_sample'), required: true %>
+        </div>
+        <div>
+          <%= label_tag 'user_name', t('.name') %>
+          <%= text_field_tag 'user[name]', t('.name_sample'), required: true %>
+        </div>
+        <% if locale == :ru %>
+          <div>
+            <%= label_tag 'user_patronymic', 'Отчество' %>
+            <%= text_field_tag 'user[patronymic]', 'Иванович', required: true %>
+          </div>
+        <% end %>
+        <div class="date">
+          <%= label_tag 'user_birthday', t('.birthday') %>
+          <%=
+            text_field_tag(
+                'user[birthday]',
+                '01.01.2000',
+                data: { mask: '00.00.0000' },
+                required: true,
+                size: 10
+            )
+          %>
+        </div>
+        <div>
+          <%= label_tag 'user_phone', t('.phone') %>
+          <%=
+            telephone_field_tag(
+                'user[phone]',
+                t(:phone_sample),
+                data: { mask: t(:phone_mask) },
+                required: true
+            )
+          %>
+        </div>
+        <div>
+          <%= label_tag 'user_email', 'E-mail' %>
+          <%= email_field_tag 'user[email]', 'user@example.com', required: true %>
+        </div>
+        <div>
+          <%= label_tag 'user_passport', t('.passport') %>
+          <%=
+            text_field_tag(
+                'user[passport]',
+                '12 34 123456',
+                data: { mask: '00 00 000000' },
+                required: true,
+                pattern: '(\d\d\s?){2}\d{6}',
+                placeholder: '00 00 000000',
+                maxlength: 12
+            )
+          %>
+        </div>
+      </fieldset>
+      <div class="buttons">
+        <button class="button-link"><%= t(:register_in_two_clicks) %></button>
+      </div>
+      <p class="disclaimer">
+        <%= raw t(:consent_a) %>
+        <%= link_to(t(:consent_b), '#') %>.
+      </p>
+    </form>
+  </div>
+</section>

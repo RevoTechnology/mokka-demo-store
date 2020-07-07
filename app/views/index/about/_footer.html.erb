@@ -1,0 +1,13 @@
+<% items = Biovision::Components::Shop::Messages.landing_faq %>
+<footer class="about-footer">
+  <div class="content-wrapper" id="about-faq">
+    <h2><%= t('.heading') %></h2>
+
+    <% items.each do |item| %>
+      <details>
+        <summary><%= item[locale][0] %></summary>
+        <p><%= item[locale][1] %></p>
+      </details>
+    <% end %>
+  </div>
+</footer>

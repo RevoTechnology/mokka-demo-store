@@ -1,0 +1,32 @@
+.auth {
+  margin-bottom: var(--spacer-l);
+
+  .lead {
+    font-family: var(--font-family-shop);
+    font-size: var(--font-size-large);
+  }
+
+  .auth-balance {
+    background: image_url('bg-order-tl.svg') no-repeat top left, image_url('bg-order-br.svg') no-repeat bottom right, var(--main-color-a);
+    color: var(--text-color-inverted-primary);
+    margin: var(--spacer-m) 0;
+    max-width: 65.2rem;
+    padding: var(--spacer-m);
+    text-align: right;
+
+    h1 {
+      text-align: left;
+    }
+
+    p {
+      margin-bottom: var(--spacer-m);
+      text-align: left;
+    }
+  }
+
+  .continue {
+    .buy-button {
+      display: inline-block;
+    }
+  }
+}

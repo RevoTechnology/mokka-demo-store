@@ -1,0 +1,24 @@
+<div class="popup-sms">
+  <p class="lead">
+    <%= t('.lead') %>
+  </p>
+
+  <form class="mokka-form js-popup-form" action="<%= sms_path(cart: params[:cart]) %>">
+    <fieldset>
+      <div>
+        <%=
+          telephone_field_tag(
+              'phone',
+              t(:phone_sample),
+              data: { mask: t(:phone_mask) },
+              placeholder: t(:phone_sample),
+              required: true
+          )
+        %>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <button class="button-link"><%= t(:send) %></button>
+    </div>
+  </form>
+</div>

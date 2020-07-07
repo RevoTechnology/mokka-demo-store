@@ -1,0 +1,72 @@
+<div class="popup-pay">
+  <div class="limit">
+    <%= t('.available_amount') %>: <strong><%= t('layouts.application.header.advance_value') %></strong>
+    <a href="#" data-popup="<%= pay2_path(cart: params[:cart]) %>">Вариант «частями»</a>
+  </div>
+
+  <h4>Заказ №1234</h4>
+
+  <dl class="popup-cart">
+    <div>
+      <dt>Сумма заказа</dt>
+      <dd>6 000 ₽</dd>
+    </div>
+    <div>
+      <dt>Кроссовки для бега</dt>
+      <dd>6 000 ₽</dd>
+    </div>
+    <div>
+      <dt>Доставка</dt>
+      <dd>600 ₽</dd>
+    </div>
+  </dl>
+
+  <form class="js-popup-form" action="<%= sms2_path(a: params[:a]) %>">
+    <fieldset>
+      <legend>Выберите срок погашения аванса</legend>
+
+      <div class="time">
+        <div class="range-wrapper">
+          <label for="range">Срок погашения:</label>
+          <div><span id="pay-range-value">6</span> мес.</div>
+          <input type="range" id="range" data-value="pay-range-value" min="3" max="12" step="1" value="6" required/>
+          <ul class="ticks">
+            <li>3</li>
+            <li>6</li>
+            <li>12</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flags">
+        <div>
+          <input type="checkbox" id="pay-flag-info" name="flags[info]" checked/>
+          <label for="pay-flag-info">Подключить дополнительное информирование</label>
+        </div>
+        <div>
+          <input type="checkbox" id="pay-flag-insure" name="flags[insure]" checked/>
+          <label for="pay-flag-insure">Подключить защиту от несчастных случаев</label>
+        </div>
+      </div>
+
+      <dl class="summary">
+        <div>
+          <dt>Итого сумма к оплате</dt>
+          <dd>6 600 ₽</dd>
+        </div>
+        <div>
+          <dt>Ежемесячный платеж по авансу</dt>
+          <dd>1 100 ₽</dd>
+        </div>
+      </dl>
+
+      <button class="button-link">оплатить авансом</button>
+
+      <div class="disclaimer">
+        Нажимая кнопку <q>Оплатить авансом</q>, я принимаю
+        <a href="#">Общие и Индивидуальные условия Договора потребительского
+          займа (с лимитом кредитования)</a>.
+      </div>
+    </fieldset>
+  </form>
+</div>

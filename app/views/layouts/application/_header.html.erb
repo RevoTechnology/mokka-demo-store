@@ -1,0 +1,40 @@
+<header class="main-header">
+  <div class="content-wrapper">
+    <% auth_params = content_for?(:auth) || !params[:a].blank? ? { a: 1 } : {} %>
+    <%=
+      link_to(
+          image_tag('logos/demo-logo.svg', alt: 'Demostore'),
+          root_path,
+          class: 'logo'
+      )
+    %>
+    <div class="header-authentication" id="header-authentication">
+      <%
+        if content_for?(:auth) || !params[:a].blank?
+          c1 = ''
+          c2 = 'hidden'
+        else
+          c1 = 'hidden'
+          c2 = ''
+        end
+      %>
+      <div class="auth-info1 info <%= c1 %>">
+        <%= link_to(t('.name'), url_for(a: nil)) %>
+        <div>
+          <%= t('.advance_text') %>:
+          <%= raw t('.advance_value') %>
+        </div>
+      </div>
+      <%= link_to(t('.log_in'), url_for(a: 1), class: "auth-info2 #{c2}") %>
+    </div>
+    <%=
+      link_to(
+          image_tag('icons/cart.svg', alt: t('.cart')),
+          cart_path(auth_params),
+          class: 'header-cart',
+          data: { count: '' },
+          id: 'header-cart'
+      )
+    %>
+  </div>
+</header>

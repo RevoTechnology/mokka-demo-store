@@ -1,0 +1,19 @@
+.about-header {
+  padding-bottom: var(--spacer-m);
+
+  figure {
+    text-align: center;
+  }
+
+  img {
+    width: 14rem;
+  }
+
+  .lead {
+    //font-size: var(--font-size-large);
+    line-height: 1.58;
+    margin: var(--spacer-s) auto;
+    max-width: 64rem;
+    text-align: center;
+  }
+}
