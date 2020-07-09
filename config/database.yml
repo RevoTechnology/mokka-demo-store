@@ -1,25 +1,9 @@
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-development:
-  <<: *default
-  database: demoshop
-  #username: demoshop
-  #password:
-  #host: localhost
-  #port: 5432
-  #schema_search_path: myapp,sharedapp,public
-  #min_messages: notice
-
-test:
-  <<: *default
-  database: demoshop_test
-
 production:
   <<: *default
-  database: demoshop
-  username: demoshop
+  database: demoshop.sqlite3
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: localhost

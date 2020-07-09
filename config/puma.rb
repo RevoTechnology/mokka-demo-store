@@ -36,15 +36,4 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
-
-if ENV['RAILS_ENV'] == 'production'
-  shared_path = '/var/www/demostore/shared'
-  logs_dir    = "#{shared_path}/log"
-
-  state_path "#{shared_path}/tmp/puma/state"
-  pidfile "#{shared_path}/tmp/puma/pid"
-  bind "unix://#{shared_path}/tmp/puma.sock"
-  stdout_redirect "#{logs_dir}/stdout.log", "#{logs_dir}/stderr.log", true
-
-  activate_control_app
-end
+activate_control_app
