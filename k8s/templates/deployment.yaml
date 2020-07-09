@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "demostore.fullname" . }}
+  labels:
+    {{- include "demostore.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "demostore.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "demostore.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{.Values.image.registry}}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          livenessProbe:
+            tcpSocket: { port: {{ .Values.service.target_port }} }
+          env:
+            - name: APP_ENV
+              value: "{{ .Values.application.environment }}"
+            - name: RACK_ENV
+              value: "{{ .Values.application.environment }}"
+            - name: SENTRY_DSN
+              value: "{{ .Values.application.credentials.sentry_dsn }}"
+            - name: REDIS_URL
+              value: "{{ .Values.application.credentials.redis_url }}"
+            - name: SOLOVIEV_URL
+              value: "{{ .Values.application.credentials.soloviev_url }}"
+            - name: SOLOVIEV_LOGIN
+              value: "{{ .Values.application.credentials.soloviev_login }}"
+            - name: SOLOVIEV_PASSWORD
+              value: "{{ .Values.application.credentials.soloviev_password }}"
+            - name: EXPIRE_SEC
+              value: "{{ .Values.application.credentials.expire_sec }}"

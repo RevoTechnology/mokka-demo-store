@@ -1,0 +1,25 @@
+replicaCount: 1
+application:
+  environment: staging
+  credentials:
+    app_env: staging
+    rack_env: staging
+    sentry_dsn: https://a68bf498c33e4175aa10f54aa2a8f0fa:ba1de89e392c4ccdad33b7914716bfce@sentry.rv-prod.ru/25
+image:
+  pullPolicy: Always
+  repository: revotechnology/solviev
+  tag: master
+imagePullSecrets:
+  - name: itrevocred
+service:
+  port: 80
+  target_port: 3000
+  type: ClusterIP
+ingress:
+  enabled: True
+  annotations:
+    kubernetes.io/ingress.class: nginx 
+  hosts:
+    - host: demostore.revoup.ru
+      paths:
+      - /

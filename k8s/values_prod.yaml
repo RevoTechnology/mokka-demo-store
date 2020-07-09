@@ -1,0 +1,27 @@
+replicaCount: 1
+application:
+  environment: production
+  credentials:
+    app_env: production
+    rack_env: production
+    sentry_dsn: https://a68bf498c33e4175aa10f54aa2a8f0fa:ba1de89e392c4ccdad33b7914716bfce@sentry.rv-prod.ru/25
+image:
+  repository: revotechnology/demostore
+  tag: master
+  pullPolicy: Always
+imagePullSecrets:
+  - name: itrevocred
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+  target_port: 3000
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - host: homer.revoup.ru
+      paths: [/]
