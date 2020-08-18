@@ -12,6 +12,20 @@
   <%= yield :alternate_links %>
   <%= render 'shared/meta_texts' %>
   <script defer src="https://unpkg.com/imask"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      if (arguments.length === 1) {
+        dataLayer.push(arguments[0]);
+      } else {
+        dataLayer.push(arguments);
+      }
+    }
+    gtag('js', new Date());
+    gtag('config', 'GTM-PB9FCWT', {
+      page_path: window.location.pathname,
+    });
+  </script>  
 </head>
 <body>
 <%= render 'layouts/application/sidebar' %>
